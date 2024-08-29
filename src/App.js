@@ -5,7 +5,7 @@ const App =()=>{
 
   const [number,setNumber]= useState("")
   const onValue =(event)=>{
-    setNumber(event + number)
+    setNumber( number + event)
    }
 const handleclick=()=>{
   setNumber(eval(number).toString())

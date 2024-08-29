@@ -1,10 +1,11 @@
 import { useState } from "react";
+import "./App.css"
 
 const App =()=>{
 
   const [number,setNumber]= useState("")
   const onValue =(event)=>{
-    setNumber(event+number)
+    setNumber(event + number)
    }
 const handleclick=()=>{
   setNumber(eval(number).toString())
@@ -13,13 +14,15 @@ const handleclick=()=>{
   const clear=()=>{
     setNumber("")
   }
+
+
   return(
     <div class="body">
-      <h1 className="heading">CALCULATOR</h1>
+      <h1 className="heading"  >CALCULATOR</h1>
 
       <div class="search_bar_div">
-      <input type="" placeholder="0" class="box" value={number}onChange={onValue}/>
-    
+      <input type="text" placeholder="0" class="box" value={number}onChange={onValue}/>
+      <button className="btn" onClick={clear}>C</button>
       </div>
       <div class="secnd_row">
         <button onClick={()=>onValue("7")}>7</button>
@@ -39,11 +42,11 @@ const handleclick=()=>{
         <button  onClick={()=>onValue("3")}>3</button>
         <button  onClick={()=>onValue("2")}>2</button>
         <button  onClick={()=>onValue("1")}>1</button>
-        <button>-</button>
+        <button onClick={()=>onValue("-")}>-</button>
         
       </div>
       <div class="secnd_row">
-        <button onClick={clear}>C</button>
+        
         <button  onClick={()=>onValue("0")}>0</button>
         <button  onClick={()=>onValue(".")}>.</button>
         <button onClick={handleclick}>=</button>
